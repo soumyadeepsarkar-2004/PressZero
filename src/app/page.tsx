@@ -7,6 +7,7 @@ import InteractiveDemoSection from "@/components/hero/InteractiveDemoSection";
 import FeatureGrid from "@/components/hero/FeatureGrid";
 import PortalShowcase from "@/components/hero/PortalShowcase";
 import PrivacyManifesto from "@/components/hero/PrivacyManifesto";
+import SeoKnowledgeHub from "@/components/hero/SeoKnowledgeHub";
 import BottomCtaBanner from "@/components/layout/BottomCtaBanner";
 
 export default function Home() {
@@ -30,7 +31,10 @@ export default function Home() {
       {/* 6. Zero-Knowledge Architecture & Offline PWA Technical Deep-Dive */}
       <PrivacyManifesto />
 
-      {/* 7. Dedicated Master Bottom Callout Banner */}
+      {/* 7. Comprehensive Semantic SEO Knowledge Hub & FAQs */}
+      <SeoKnowledgeHub />
+
+      {/* 8. Dedicated Master Bottom Callout Banner */}
       <BottomCtaBanner />
     </main>
   );
