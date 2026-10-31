@@ -87,6 +87,14 @@ PressZero is engineered with a strict **Vercel Monochromatic minimalist aestheti
 
 ---
 
+### 8. Developer Documentation Portal (`/docs` & `docs/`)
+*Comprehensive technical documentation covering mathematical bisection algorithms, signature high-pass thresholding, and native runner architectures.*
+<p align="center">
+  <img src="docs/screenshots/08-developer-docs.png" alt="PressZero Developer Docs" width="100%" />
+</p>
+
+---
+
 ## ⚡ The Problem & The PressZero Solution
 
 | The Traditional Way | The PressZero Way |

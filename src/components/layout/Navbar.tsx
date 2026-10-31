@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, Sliders, FileSignature, Crop, Layers, Globe, Download } from "lucide-react";
+import { ShieldCheck, Sliders, FileSignature, Crop, Layers, Globe, Download, BookOpen } from "lucide-react";
 import PressZeroLogo from "@/components/common/PressZeroLogo";
 import PwaInstallPrompt from "./PwaInstallPrompt";
 
@@ -60,6 +60,15 @@ export default function Navbar() {
           >
             <Layers className="w-3.5 h-3.5" />
             <span>Batch ZIP</span>
+          </Link>
+
+          <Link
+            href="/docs"
+            className="hover:text-[var(--color-ink)] transition-colors duration-150 flex items-center gap-1.5"
+            title="Developer documentation & architecture"
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>Docs</span>
           </Link>
         </nav>
 
