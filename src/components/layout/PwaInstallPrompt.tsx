@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Download, Smartphone, CheckCircle2, X } from "lucide-react";
+import Link from "next/link";
+import { Smartphone, CheckCircle2 } from "lucide-react";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -11,11 +12,10 @@ interface BeforeInstallPromptEvent extends Event {
 export default function PwaInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState<boolean>(false);
-  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    // Check if app is launched in standalone mode
-    if (window.matchMedia("(display-mode: standalone)").matches) {
+    // Check if app is already launched in standalone PWA mode
+    if (typeof window !== "undefined" && window.matchMedia("(display-mode: standalone)").matches) {
       setIsInstalled(true);
       return;
     }
@@ -23,54 +23,62 @@ export default function PwaInstallPrompt() {
     const handler = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
-      setIsVisible(true);
     };
 
     window.addEventListener("beforeinstallprompt", handler);
 
     window.addEventListener("appinstalled", () => {
       setIsInstalled(true);
-      setIsVisible(false);
       setDeferredPrompt(null);
     });
 
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-    await deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
-      setIsInstalled(true);
-      setIsVisible(false);
+  const handleInstallClick = async (e: React.MouseEvent) => {
+    if (deferredPrompt) {
+      e.preventDefault();
+      await deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === "accepted") {
+        setIsInstalled(true);
+      }
+      setDeferredPrompt(null);
     }
-    setDeferredPrompt(null);
   };
 
   if (isInstalled) {
     return (
-      <span className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium bg-[var(--color-paper-2)] border border-[var(--color-rule)] text-[var(--color-ok)]">
-        <CheckCircle2 className="w-3 h-3" />
-        <span>Desktop app active</span>
+      <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] border border-[var(--color-rule)] text-[var(--color-ok)]">
+        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+        <span className="hidden md:inline">Installed</span>
       </span>
     );
   }
 
-  if (!isVisible && !deferredPrompt) {
-    return null;
-  }
-
-  return (
-    <div className="flex items-center gap-2">
+  // If beforeinstallprompt is ready, clicking triggers browser native prompt
+  if (deferredPrompt) {
+    return (
       <button
         onClick={handleInstallClick}
-        className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-[var(--color-paper-2)] hover:bg-[var(--color-paper-3)] border border-[var(--color-rule-2)] text-[var(--color-ink)] flex items-center gap-1.5 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
-        title="Install PressZero as a standalone desktop or mobile application"
+        className="px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] border border-[var(--color-rule)] text-[var(--color-ink)] flex items-center gap-1.5 cursor-pointer active:scale-98 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
+        title="Install PressZero on your device"
       >
-        <Smartphone className="w-3 h-3 text-[var(--color-ink)]" />
+        <Smartphone className="w-3.5 h-3.5 text-[var(--color-ink)] shrink-0" />
         <span>Install app</span>
       </button>
-    </div>
+    );
+  }
+
+  // Fallback: links to download center for device install instructions
+  return (
+    <Link
+      href="/download"
+      className="px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] border border-[var(--color-rule)] text-[var(--color-ink)] flex items-center gap-1.5 cursor-pointer active:scale-98 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
+      title="Install or download PressZero"
+    >
+      <Smartphone className="w-3.5 h-3.5 text-[var(--color-ink)] shrink-0" />
+      <span>Install app</span>
+    </Link>
   );
 }

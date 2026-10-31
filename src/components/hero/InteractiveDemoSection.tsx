@@ -10,7 +10,7 @@ export default function InteractiveDemoSection() {
   const [videoModalTopic, setVideoModalTopic] = useState<VideoTopic | null>(null);
 
   return (
-    <section id="demo" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-[var(--color-rule)]">
+    <section id="demo" className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-[var(--color-rule)]">
       {/* Section Masthead with Clear Demonstration Purpose Disclaimer */}
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10">
         <div className="max-w-3xl space-y-2">

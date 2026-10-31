@@ -371,11 +371,11 @@ export default function HeroMicroCompressor() {
               </div>
 
               {/* Floating Readout Labels */}
-              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[var(--color-paper)]/90 border border-[var(--color-rule)] text-xs text-[var(--color-muted)] z-10">
+              <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-[var(--color-paper)]/90 border border-[var(--color-rule)] text-[10px] sm:text-xs text-[var(--color-muted)] z-10">
                 Original: <span className="font-measured text-[var(--color-ink)] font-medium">{formatBytes(originalSize)}</span>
               </div>
 
-              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[var(--color-paper)]/90 border border-[var(--color-rule-2)] text-xs text-[var(--color-ink)] z-10 flex items-center gap-1.5">
+              <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-[var(--color-paper)]/90 border border-[var(--color-rule-2)] text-[10px] sm:text-xs text-[var(--color-ink)] z-10 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-ok)] motion-safe:animate-pulse" />
                 Compressed: <span className="font-measured font-medium">{resultSize ? formatBytes(resultSize) : "Computing..."}</span>
               </div>
@@ -383,7 +383,7 @@ export default function HeroMicroCompressor() {
               {/* Action Toolbar on Bottom Corner of Canvas */}
               <div 
                 onMouseDown={(e) => e.stopPropagation()}
-                className="absolute bottom-3 right-3 flex items-center gap-1.5 z-20"
+                className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 flex items-center gap-1.5 z-20"
               >
                 <button
                   type="button"
@@ -391,11 +391,12 @@ export default function HeroMicroCompressor() {
                     e.stopPropagation();
                     setIsCropOpen(true);
                   }}
-                  className="px-2.5 py-1 rounded-md bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] text-xs font-medium text-[var(--color-ink-2)] border border-[var(--color-rule)] flex items-center gap-1 transition-colors duration-150 cursor-pointer"
+                  className="px-2 sm:px-2.5 py-1 rounded-md bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] text-[11px] sm:text-xs font-medium text-[var(--color-ink-2)] border border-[var(--color-rule)] flex items-center gap-1 transition-colors duration-150 cursor-pointer"
                   title="Focal Aspect Ratio Crop"
                 >
                   <Crop className="w-3 h-3" />
-                  Crop <kbd className="text-[10px] text-[var(--color-muted)] ml-0.5">C</kbd>
+                  <span>Crop</span>
+                  <kbd className="hidden sm:inline text-[10px] text-[var(--color-muted)] ml-0.5">C</kbd>
                 </button>
                 <button
                   type="button"
@@ -403,16 +404,17 @@ export default function HeroMicroCompressor() {
                     e.stopPropagation();
                     setIsLoupeOpen(true);
                   }}
-                  className="px-2.5 py-1 rounded-md bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] text-xs font-medium text-[var(--color-ink-2)] border border-[var(--color-rule)] flex items-center gap-1 transition-colors duration-150 cursor-pointer"
+                  className="px-2 sm:px-2.5 py-1 rounded-md bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] text-[11px] sm:text-xs font-medium text-[var(--color-ink-2)] border border-[var(--color-rule)] flex items-center gap-1 transition-colors duration-150 cursor-pointer"
                   title="800% Pixel Inspection Loupe"
                 >
                   <ZoomIn className="w-3 h-3" />
-                  800% Loupe <kbd className="text-[10px] text-[var(--color-muted)] ml-0.5">Z</kbd>
+                  <span>Loupe</span>
+                  <kbd className="hidden sm:inline text-[10px] text-[var(--color-muted)] ml-0.5">Z</kbd>
                 </button>
               </div>
 
               {/* Bottom Drag Instruction */}
-              <div className="absolute bottom-3 left-3 text-[10px] text-[var(--color-faint)] pointer-events-none">
+              <div className="absolute bottom-3 left-3 text-[10px] text-[var(--color-faint)] pointer-events-none hidden sm:block">
                 Press <kbd className="px-1 rounded bg-[var(--color-paper-2)] text-[var(--color-muted)] border border-[var(--color-rule)]">Space</kbd> to toggle wipe
               </div>
             </div>
