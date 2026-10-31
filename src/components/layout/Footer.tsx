@@ -63,7 +63,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li>
                 <Link href="/download" className="hover:text-[var(--color-ink)] transition-colors">
-                  Desktop app (Windows x64 & PWA)
+                  Desktop app (macOS, Windows & PWA)
                 </Link>
               </li>
               <li>

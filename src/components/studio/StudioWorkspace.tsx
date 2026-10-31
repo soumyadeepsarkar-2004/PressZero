@@ -55,9 +55,16 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
   const [loupeJob, setLoupeJob] = useState<CompressionJob | null>(null);
   const [showStudioGuide, setShowStudioGuide] = useState<boolean>(false);
   const [studioVideoTopic, setStudioVideoTopic] = useState<VideoTopic | null>(null);
+  const [isMac, setIsMac] = useState<boolean>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const featureAppliedRef = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof navigator !== "undefined") {
+      setIsMac(/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform || navigator.userAgent || ""));
+    }
+  }, []);
 
   const showToast = useCallback((msg: string) => {
     setToastMessage(msg);
@@ -475,7 +482,7 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
             Batch reducer and precision studio
           </h2>
           <p className="text-sm text-[var(--color-muted)] mt-1">
-            Drop multiple assets or paste from clipboard with <kbd className="px-1.5 py-0.5 rounded bg-[var(--color-paper-2)] text-[10px] text-[var(--color-muted)] border border-[var(--color-rule)]">Ctrl+V</kbd>.
+            Drop multiple assets or paste from clipboard with <kbd className="px-1.5 py-0.5 rounded bg-[var(--color-paper-2)] text-[10px] text-[var(--color-muted)] border border-[var(--color-rule)]">{isMac ? "⌘V" : "Ctrl+V"}</kbd>.
           </p>
         </div>
 
@@ -815,7 +822,7 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
                 <div className="max-w-sm mx-auto space-y-1">
                   <p className="font-semibold text-sm text-[var(--color-ink)]">Queue is ready for batch processing</p>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed">
-                    Drop photos on the left, paste with <kbd className="px-1.5 py-0.5 rounded bg-[var(--color-paper-2)] border border-[var(--color-rule)] text-[var(--color-muted)]">Ctrl+V</kbd>, or try with instant sample files.
+                    Drop photos on the left, paste with <kbd className="px-1.5 py-0.5 rounded bg-[var(--color-paper-2)] border border-[var(--color-rule)] text-[var(--color-muted)]">{isMac ? "⌘V" : "Ctrl+V"}</kbd>, or try with instant sample files.
                   </p>
                 </div>
 

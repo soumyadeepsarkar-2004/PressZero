@@ -35,7 +35,7 @@
   --color-ok: oklch(82% 0.16 150);             /* Clean Emerald verification */
   --color-ok-soft: oklch(22% 0.04 150);
   
-  --font-display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
   --font-body: var(--font-display);
   --font-measured: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
   

@@ -1,0 +1,17 @@
+﻿#!/bin/bash
+# PressZero macOS Native Universal Runner
+# Universal binary / shell launcher for Apple Silicon (M1/M2/M3/M4) and Intel x86_64
+
+TARGET_URL="https://presszero.app/studio"
+
+# Try standalone window via Chrome, Edge, or Brave
+if [ -d "/Applications/Google Chrome.app" ]; then
+    open -na "Google Chrome" --args --app="$TARGET_URL" --window-size=1280,850
+elif [ -d "/Applications/Microsoft Edge.app" ]; then
+    open -na "Microsoft Edge" --args --app="$TARGET_URL" --window-size=1280,850
+elif [ -d "/Applications/Brave Browser.app" ]; then
+    open -na "Brave Browser" --args --app="$TARGET_URL" --window-size=1280,850
+else
+    # Universal fallback to default browser
+    open "$TARGET_URL"
+fi

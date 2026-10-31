@@ -17,6 +17,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-macOS-Universal.zip"><b>🍎 Download macOS Universal (.ZIP)</b></a> •
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Setup.exe"><b>⬇️ Download Windows Setup (.EXE)</b></a> •
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Windows-x64.zip"><b>📦 Download Windows Pack (.ZIP)</b></a> •
   <a href="#visual-product-walkthrough"><b>📸 Product Gallery</b></a> •
@@ -98,18 +99,26 @@ PressZero is engineered with a strict **Vercel Monochromatic minimalist aestheti
 
 ---
 
-## 🖥️ Windows Desktop Software & Downloads
+## 🖥️ Desktop Native Software (macOS & Windows)
 
-PressZero provides dedicated native Windows binaries verified for enterprise and air-gapped environments:
+PressZero provides dedicated native binaries verified for enterprise, biometric centers, and air-gapped environments:
 
-| Package | File Name | Size | Checksum (SHA-256) | Download Link |
-| :--- | :--- | :--- | :--- | :--- |
-| **Windows Setup Installer** | `PressZero-Setup.exe` | 34 KB | `2182A5A55BB86E7879317563D59268D1F1556633A920A559EC378F170464084F` | [Download .EXE](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Setup.exe) |
-| **Complete Software Pack** | `PressZero-Windows-x64.zip` | 20 KB | `1C33D92A083DE6F8FD24EF510A0E8A16D40D2093C4347B23DCFEC192AE61B81B` | [Download .ZIP](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Windows-x64.zip) |
-| **Portable Standalone Runner** | `PressZero.exe` | 5 KB | `F70FAADDA40E7ECB6BD64209BAC071631B669C8B21D9497DD0BF1EA7FAFA65EF` | [Download .EXE](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero.exe) |
+| Platform | Package | File Name | Size | Checksum (SHA-256) | Download Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Apple macOS** | **macOS Universal App** (Apple Silicon M1–M4 & Intel) | `PressZero-macOS-Universal.zip` | 41 KB | `2D418F304E42D56A805F6B2710BE95FBDF4BBF1959AAFDB6E4718995194BEF7F` | [Download macOS (.ZIP)](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-macOS-Universal.zip) |
+| **Microsoft Windows** | **Windows Setup Installer** | `PressZero-Setup.exe` | 34 KB | `2182A5A55BB86E7879317563D59268D1F1556633A920A559EC378F170464084F` | [Download Windows (.EXE)](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Setup.exe) |
+| **Microsoft Windows** | **Complete Software Pack** | `PressZero-Windows-x64.zip` | 20 KB | `1C33D92A083DE6F8FD24EF510A0E8A16D40D2093C4347B23DCFEC192AE61B81B` | [Download Windows (.ZIP)](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Windows-x64.zip) |
+| **Microsoft Windows** | **Portable Standalone Runner** | `PressZero.exe` | 5 KB | `F70FAADDA40E7ECB6BD64209BAC071631B669C8B21D9497DD0BF1EA7FAFA65EF` | [Download Runner (.EXE)](https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero.exe) |
 
 > [!NOTE]
-> **Windows Installer Features**: Installs cleanly to `%LOCALAPPDATA%\Programs\PressZero` without needing administrator permissions, creates Start Menu & Desktop shortcuts, and includes an uninstaller.
+> **macOS Installation**:
+> 1. Unzip `PressZero-macOS-Universal.zip`.
+> 2. Double-click `Install-PressZero.command` or move `PressZero.app` to `/Applications`.
+> 3. Launch from Spotlight (`⌘ + Space`) or Launchpad.
+> *(If Gatekeeper shows an unnotarized prompt: run `xattr -cr /Applications/PressZero.app` in Terminal)*
+>
+> **Windows Installation**:
+> Installs cleanly to `%LOCALAPPDATA%\Programs\PressZero` without needing administrator permissions, creates Start Menu & Desktop shortcuts, and includes an uninstaller.
 
 ---
 

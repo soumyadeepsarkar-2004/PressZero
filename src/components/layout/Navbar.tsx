@@ -68,7 +68,7 @@ export default function Navbar() {
           <Link
             href="/download"
             className="btn-ghost px-2.5 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
-            title="Download PressZero for Windows & desktop"
+            title="Download PressZero for macOS, Windows & desktop"
           >
             <Download className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Download</span>
