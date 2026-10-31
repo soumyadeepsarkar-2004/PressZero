@@ -83,14 +83,9 @@ export default function PressZeroLogo({
       </svg>
 
       {showWordmark && (
-        <div className="flex items-center gap-1.5 leading-none">
-          <span className="font-semibold text-sm tracking-tight text-[var(--color-ink)]">
-            Press<span className="text-[var(--color-muted)] font-normal">Zero</span>
-          </span>
-          <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[var(--color-paper-2)] text-[var(--color-muted)] border border-[var(--color-rule)]">
-            v1.0
-          </span>
-        </div>
+        <span className="font-semibold text-sm tracking-tight text-[var(--color-ink)]">
+          Press<span className="text-[var(--color-muted)] font-normal">Zero</span>
+        </span>
       )}
     </div>
   );

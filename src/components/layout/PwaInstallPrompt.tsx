@@ -49,9 +49,10 @@ export default function PwaInstallPrompt() {
 
   if (isInstalled) {
     return (
-      <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] border border-[var(--color-rule)] text-[var(--color-ok)]">
+      <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] border border-[var(--color-rule)] text-[var(--color-ok)] shrink-0">
         <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-        <span className="hidden md:inline">Installed</span>
+        <span className="hidden sm:inline">Installed</span>
+        <span className="sm:hidden">Installed</span>
       </span>
     );
   }
@@ -61,11 +62,12 @@ export default function PwaInstallPrompt() {
     return (
       <button
         onClick={handleInstallClick}
-        className="px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] border border-[var(--color-rule)] text-[var(--color-ink)] flex items-center gap-1.5 cursor-pointer active:scale-98 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
-        title="Install PressZero on your device"
+        className="btn-cool px-2.5 sm:px-3 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] shrink-0"
+        title="Install PressZero as a progressive web application"
       >
         <Smartphone className="w-3.5 h-3.5 text-[var(--color-ink)] shrink-0" />
-        <span>Install app</span>
+        <span className="hidden sm:inline">Install app</span>
+        <span className="sm:hidden">Install</span>
       </button>
     );
   }
@@ -74,11 +76,12 @@ export default function PwaInstallPrompt() {
   return (
     <Link
       href="/download"
-      className="px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-medium bg-[var(--color-paper-2)] hover:bg-[var(--color-surface-hover)] border border-[var(--color-rule)] text-[var(--color-ink)] flex items-center gap-1.5 cursor-pointer active:scale-98 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
+      className="btn-cool px-2.5 sm:px-3 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] shrink-0"
       title="Install or download PressZero"
     >
       <Smartphone className="w-3.5 h-3.5 text-[var(--color-ink)] shrink-0" />
-      <span>Install app</span>
+      <span className="hidden sm:inline">Install app</span>
+      <span className="sm:hidden">Install</span>
     </Link>
   );
 }

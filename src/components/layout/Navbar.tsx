@@ -16,12 +16,12 @@ export default function Navbar() {
         </Link>
 
         {/* Header Actions: Download, Install App, and Open Studio */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* 1. Download Button */}
           <Link
             href="/download"
-            className="btn-ghost px-2.5 sm:px-3 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)]"
-            title="Download PressZero for macOS, Windows and desktop"
+            className="btn-ghost px-2.5 sm:px-3 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] shrink-0"
+            title="Download PressZero for offline desktop and mobile"
           >
             <Download className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
             <span>Download</span>
@@ -33,9 +33,10 @@ export default function Navbar() {
           {/* 3. Open Studio Button */}
           <Link
             href="/studio"
-            className="btn-primary px-3 sm:px-3.5 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] shrink-0"
+            className="btn-primary px-2.5 sm:px-3.5 py-1.5 text-xs font-medium flex items-center gap-1.5 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] shrink-0"
           >
-            <span>Open studio</span>
+            <span className="hidden sm:inline">Open studio</span>
+            <span className="sm:hidden">Studio</span>
             <ArrowRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
           </Link>
         </div>
