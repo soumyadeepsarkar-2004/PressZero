@@ -9,6 +9,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const siteBaseUrl = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || "https://presszero.app";
+
 export const metadata: Metadata = {
   title: {
     default: "PressZero — Image Reducer, Resizer & Exact-KB Compressor",
@@ -75,15 +77,15 @@ export const metadata: Metadata = {
     "client side image compression",
     "batch image compressor zip"
   ],
-  authors: [{ name: "PressZero Engineering", url: "https://presszero.app" }],
+  authors: [{ name: "PressZero Engineering", url: siteBaseUrl }],
   creator: "PressZero",
   publisher: "PressZero",
-  metadataBase: new URL("https://presszero.app"),
+  metadataBase: new URL(siteBaseUrl),
   alternates: {
-    canonical: "https://presszero.app",
+    canonical: siteBaseUrl,
     languages: {
-      "en-US": "https://presszero.app",
-      "hi-IN": "https://presszero.app",
+      "en-US": siteBaseUrl,
+      "hi-IN": siteBaseUrl,
     },
   },
   robots: {
@@ -101,13 +103,13 @@ export const metadata: Metadata = {
     title: "PressZero — Image Reducer, Resizer & Exact-KB Compressor",
     description:
       "Reduce images, photos, and signatures to exact kilobyte limits in your browser. 100% on-device Web Workers. Zero server uploads.",
-    url: "https://presszero.app",
+    url: siteBaseUrl,
     siteName: "PressZero",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://presszero.app/og-image.png",
+        url: `${siteBaseUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "PressZero Image Reducer and Exact-KB Compressor",
@@ -118,7 +120,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PressZero — Image Reducer, Resizer & Exact-KB Compressor",
     description: "Compress images to exact KBs with zero server uploads.",
-    images: ["https://presszero.app/og-image.png"],
+    images: [`${siteBaseUrl}/og-image.png`],
   },
   manifest: "/manifest.json",
   icons: {
@@ -141,30 +143,30 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://presszero.app/#website",
-        "url": "https://presszero.app",
+        "@id": `${siteBaseUrl}/#website`,
+        "url": siteBaseUrl,
         "name": "PressZero",
         "description": "Free Online Image Reducer, Image Resizer & Exact-KB Precision Compressor",
         "publisher": {
           "@type": "Organization",
           "name": "PressZero",
-          "url": "https://presszero.app",
+          "url": siteBaseUrl,
           "logo": {
             "@type": "ImageObject",
-            "url": "https://presszero.app/icon-512.png"
+            "url": `${siteBaseUrl}/icon-512.png`
           }
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://presszero.app/studio?q={search_term_string}",
+          "target": `${siteBaseUrl}/studio?q={search_term_string}`,
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://presszero.app/#software",
+        "@id": `${siteBaseUrl}/#software`,
         "name": "PressZero Image Reducer & Resizer",
-        "url": "https://presszero.app",
+        "url": siteBaseUrl,
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "All modern operating systems (Windows, macOS, Linux, iOS, Android)",
         "browserRequirements": "Requires HTML5 Canvas and JavaScript Web Workers",
@@ -272,25 +274,25 @@ export default function RootLayout({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://presszero.app",
+            "item": siteBaseUrl,
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Studio Workbench",
-            "item": "https://presszero.app/studio",
+            "item": `${siteBaseUrl}/studio`,
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Developer Docs",
-            "item": "https://presszero.app/docs",
+            "item": `${siteBaseUrl}/docs`,
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Desktop Downloads",
-            "item": "https://presszero.app/download",
+            "item": `${siteBaseUrl}/download`,
           },
         ],
       },
