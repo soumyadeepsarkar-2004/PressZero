@@ -1,0 +1,20 @@
+# PressZero
+> A modern, 100% client-side, zero-knowledge image reducer and compressor engineered for strict file size limits (exact KBs) and maximum privacy.
+
+## Overview
+PressZero enables users to compress and resize images to an exact target file size in kilobytes (e.g. 2 KB, 15 KB, 30 KB, 50 KB, 100 KB, 200 KB) without trial-and-error quality guessing. All processing runs entirely inside the user's browser using HTML5 Canvas, Web Workers, and WebAssembly codecs. Images are never uploaded to any server or database.
+
+## Key Capabilities
+- [Exact Target-KB Engine](https://presszero.app/#studio): Dual-axis binary search algorithm that bisects quality and adaptively downscales resolution to achieve the target with ±1% precision.
+- [Signature & Document Crisp Filter](https://presszero.app/#studio): Adaptive white-point bleaching and ink contrast enhancement to prevent blurry portal rejections for signatures down to 4 KB - 30 KB.
+- [Exam & Government Portal Matrix](https://presszero.app/#portal-matrix): 1-click presets for NTA / UGC-NET (10–50 KB signature, 10–200 KB photo), UPSC, SSC, US Visa DS-160 (600x600 px), Schengen Visa, and Passport Seva.
+- [Zero-Knowledge Privacy Proof](https://presszero.app/#privacy-manifesto): Verifiable 0 outgoing HTTP requests. Safe for passports, signatures, national IDs, and confidential documents.
+- [Batch Processing & ZIP Export](https://presszero.app/#studio): Multi-threaded client-side batch compression with 1-click in-memory ZIP download.
+- [PWA & Offline Capability](https://presszero.app): Operates in full airplane mode with 100% functionality.
+
+## Documentation & Full AI Context
+- [Complete Monolithic Documentation](https://presszero.app/llms-full.txt): Full technical architecture, algorithms, and portal specifications.
+- [Sitemap](https://presszero.app/sitemap.xml): Index of all accessible sections.
+
+## Optional
+- [Robots Policy](https://presszero.app/robots.txt): Machine crawler instructions granting access to AI agents.

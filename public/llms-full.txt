@@ -1,0 +1,50 @@
+# PressZero — Comprehensive AI Knowledge Base
+
+## 1. Product Summary
+PressZero is a zero-knowledge image compression web application built with Next.js 15, React 19, and Tailwind CSS. It is specifically designed to solve the common issue where government, academic, and visa portals require uploaded photos and signatures to fall within strict byte windows (e.g. "between 10 KB and 50 KB" or "strictly under 20 KB").
+
+Unlike traditional cloud compressors (TinyPNG, Compressor.io, iLoveIMG), PressZero performs 100% of image decoding, processing, filtering, and re-encoding on the client side inside the user's web browser. No files, metadata, or metrics are uploaded to any backend server or stored in any database.
+
+## 2. Technical Architecture
+
+### 2.1 Dual-Axis Binary Search Algorithm
+Standard browser canvas APIs (`canvas.toBlob`) only accept a quality parameter between `0.0` and `1.0`. The relationship between visual quality and compressed file size is highly non-linear and dependent on image entropy.
+
+PressZero implements a 2-stage adaptive binary search:
+- **Phase 1 (Quality Search):** Runs a 7-iteration bisection loop over `quality ∈ [0.01, 1.0]`. If `blob.size <= targetBytes`, the quality threshold is refined until the difference is within ±1%.
+- **Phase 2 (Adaptive Downscaling):** If the image is large (e.g. 4000x3000 px) and even `quality = 0.01` exceeds the target KB due to baseline JPEG headers and minimum DCT block payloads, the engine calculates the required surface area downscaling factor:
+  $$\text{Scale Ratio} = \sqrt{\frac{\text{TargetBytes}}{\text{MinBytes}}} \times 0.95$$
+  It downsamples the canvas dimensions using high-quality image smoothing, then re-executes the quality binary search.
+
+### 2.2 Signature Crisp & Document Filter
+Signatures captured by smartphones suffer from room shadows, yellow illumination, and paper grain. Compressing these directly creates heavy JPEG ringing artifacts around ink strokes.
+- **Luminance Bleach:** For any pixel with luminance $L > \text{threshold}$ (default 210), the RGB values are bleached to pure `#FFFFFF` ($255, 255, 255$).
+- **Ink Enhancement:** Pixels below the threshold are boosted using an S-curve contrast multiplier to maintain rich dark blue or black ink tone.
+- **Unsharp Masking:** A 3x3 Laplacian edge-enhancement kernel is applied across the stroke boundaries.
+- **Result:** Pure white regions compress to near 0 bytes in discrete cosine transforms, allowing a 350 KB signature photo to shrink to 15 KB with enhanced legibility.
+
+## 3. Official Portal Matrix Specifications
+
+### NTA / UGC-NET (India)
+- **Signature:** Format: JPG/JPEG | Min: 10 KB | Max: 50 KB | Dimensions: 3.5 cm x 1.5 cm.
+- **Photograph:** Format: JPG/JPEG | Min: 10 KB | Max: 200 KB | Dimensions: 3.5 cm x 4.5 cm (passport size with 80% face coverage).
+
+### UPSC Civil Services / SSC CGL (India)
+- **Photograph:** Format: JPG/JPEG | Min: 20 KB | Max: 50 KB | Aspect Ratio: 3:4.
+- **Signature:** Format: JPG/JPEG | Min: 10 KB | Max: 20 KB.
+
+### US Department of State (DS-160 / Visa)
+- **Photograph:** Format: JPEG | Max: 240 KB | Dimensions: 600x600 px (1:1 square) | Min Resolution: 300 DPI.
+
+### Schengen Visa (European Union)
+- **Photograph:** Format: JPEG | Max: 80 KB | Dimensions: 35 mm x 45 mm (413x531 px).
+
+## 4. Privacy & Zero-Knowledge Verification
+Users can verify PressZero's security at any time:
+1. Open Browser Developer Tools (`F12`).
+2. Navigate to the **Network** tab.
+3. Perform batch compression and download results.
+4. Observe **0 outgoing network requests** related to image transmission.
+
+## 5. Offline Progressive Web App (PWA)
+PressZero can be added to the home screen or desktop via Chrome/Edge/Safari and remains fully functional with all network connections disabled.

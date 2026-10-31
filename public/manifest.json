@@ -1,0 +1,38 @@
+{
+  "name": "PressZero — Zero-Knowledge Exact-KB Image Studio",
+  "short_name": "PressZero",
+  "description": "Compress images to exact target KBs with 100% client-side zero-knowledge privacy.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0a0a",
+  "theme_color": "#000000",
+  "categories": ["utilities", "productivity", "graphics"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Studio Workbench",
+      "url": "/studio",
+      "description": "Launch full multi-file batch image compressor studio"
+    }
+  ]
+}
