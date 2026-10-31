@@ -42,9 +42,17 @@ PressZero is engineered to eliminate guesswork percentage sliders by mathematica
    - Telemetry fields and memory checks.
    - Uptime monitor and deployment verification.
 
+7. **[Cloud Deployment & Antideploy Infrastructure](deployment-antideploy.md)**
+   - Antideploy container runner and Fly.io topology.
+   - Cloudflare Global Anycast Edge CDN and TLS 1.3.
+   - Automated zero-leak security audit scan.
+   - One-command agent reproducibility.
+
 ---
 
 ## 🚀 Quick Links
+- **Live Production App**: [https://presszero.antideploy.app](https://presszero.antideploy.app)
+- **Antideploy Dashboard**: [https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116](https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116)
 - **Web Studio**: [https://presszero.app/studio](https://presszero.app/studio)
 - **Download Center**: [https://presszero.app/download](https://presszero.app/download)
 - **GitHub Repository**: [https://github.com/soumyadeepsarkar-2004/PressZero](https://github.com/soumyadeepsarkar-2004/PressZero)

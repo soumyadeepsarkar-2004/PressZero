@@ -10,6 +10,8 @@
 </p>
 
 <p align="center">
+  <a href="https://presszero.antideploy.app"><img src="https://img.shields.io/badge/Live_App-presszero.antideploy.app-000000?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live on Antideploy" /></a>
+  <a href="https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116"><img src="https://img.shields.io/badge/Hosted_by-Antideploy-000000?style=for-the-badge&logo=fastapi&logoColor=white" alt="Antideploy Hosting" /></a>
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/CI-Passing-000000?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status" /></a>
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/tag/v1.0.0"><img src="https://img.shields.io/badge/Release-v1.0.0-000000?style=for-the-badge&logo=windows&logoColor=white" alt="Release v1.0.0" /></a>
   <a href="#security--zero-knowledge-guarantee"><img src="https://img.shields.io/badge/Privacy-0_Bytes_Egress-000000?style=for-the-badge&logo=auth0&logoColor=white" alt="Zero Egress" /></a>
@@ -17,6 +19,7 @@
 </p>
 
 <p align="center">
+  <a href="https://presszero.antideploy.app"><b>🌐 Live Production Web App</b></a> •
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-macOS-Universal.zip"><b>🍎 Download macOS Universal (.ZIP)</b></a> •
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Setup.exe"><b>⬇️ Download Windows Setup (.EXE)</b></a> •
   <a href="https://github.com/soumyadeepsarkar-2004/PressZero/releases/download/v1.0.0/PressZero-Windows-x64.zip"><b>📦 Download Windows Pack (.ZIP)</b></a> •
@@ -308,6 +311,19 @@ Free, open-source, and private forever:
 GitHub: https://github.com/soumyadeepsarkar-2004/PressZero
 Download: https://github.com/soumyadeepsarkar-2004/PressZero/releases/tag/v1.0.0
 ```
+
+---
+
+## ⚡ Cloud Deployment & Infrastructure (Antideploy)
+
+Special shoutout to **[Antideploy](https://antideploy.com)** for powering the production cloud hosting of PressZero!
+
+Antideploy provides agent-native, zero-configuration cloud hosting. Every build is automatically packaged, containerized, and routed globally through Cloudflare Edge CDN with free automated HTTPS and continuous security monitoring.
+
+- **Live Production URL**: [https://presszero.antideploy.app](https://presszero.antideploy.app)
+- **Application Dashboard**: [https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116](https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116)
+- **Automated Security Scan**: [Verified 0 issues](https://antideploy.com/security/scan/13cb961d-05ec-4fb0-8e35-10580e5dcd2d) (CORS, CSP, HSTS, and zero leaked credentials).
+- **One-Command Agent Deployment**: Any coding agent (Claude Code, Cursor, Windsurf, Antigravity) can deploy this project simply by fetching [https://antideploy.com/agent.md](https://antideploy.com/agent.md).
 
 ---
 

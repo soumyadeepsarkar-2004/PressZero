@@ -169,6 +169,17 @@ export default function Footer() {
                   <span>XML sitemap</span>
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--color-ink)] transition-colors flex items-center gap-1.5"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>Antideploy dashboard</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -177,7 +188,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[var(--color-muted)] gap-4">
           <p>© 2026 PressZero. 100% on-device client compute.</p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
             <Link href="/docs" className="hover:text-[var(--color-ink)] transition-colors">
               Docs
             </Link>
@@ -187,9 +198,15 @@ export default function Footer() {
             <Link href="/#privacy-manifesto" className="hover:text-[var(--color-ink)] transition-colors">
               Privacy manifesto
             </Link>
-            <Link href="/llms.txt" className="hover:text-[var(--color-ink)] transition-colors">
-              llms.txt
-            </Link>
+            <a
+              href="https://antideploy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-ink)] transition-colors flex items-center gap-1"
+            >
+              <span>Hosted on Antideploy</span>
+              <ExternalLink className="w-3 h-3" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>

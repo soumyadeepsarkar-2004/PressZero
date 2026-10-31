@@ -70,6 +70,13 @@ const DOC_SECTIONS: DocSection[] = [
     icon: <Activity className="w-4 h-4" aria-hidden="true" />,
     category: "Monitoring",
     summary: "JSON telemetry schema at /api/health for container probes and uptime monitors."
+  },
+  {
+    id: "deployment",
+    title: "Antideploy Cloud Hosting",
+    icon: <Globe className="w-4 h-4" aria-hidden="true" />,
+    category: "Infrastructure",
+    summary: "Continuous agent-driven hosting with Cloudflare edge CDN and zero-leak security audits."
   }
 ];
 
@@ -453,6 +460,68 @@ if (luma > threshold) {
   }
 }`}
                   </pre>
+                </div>
+              </div>
+            )}
+
+            {/* Section 7: Antideploy Cloud Deployment */}
+            {activeSection === "deployment" && (
+              <div className="space-y-6">
+                <div>
+                  <span className="text-xs text-[var(--color-muted)] font-medium">Infrastructure</span>
+                  <h1 className="text-2xl sm:text-3xl font-semibold text-[var(--color-ink)] mt-1">
+                    Antideploy Cloud Deployment
+                  </h1>
+                  <p className="text-sm text-[var(--color-muted)] mt-2 leading-relaxed">
+                    Continuous agent-driven hosting with automated container builds and Cloudflare edge CDN.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-4 rounded-lg bg-[var(--color-paper-2)] border border-[var(--color-rule)] space-y-2">
+                    <span className="text-xs font-semibold text-[var(--color-ink)] block">Production endpoint</span>
+                    <a
+                      href="https://presszero.antideploy.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[var(--color-ok)] hover:underline flex items-center gap-1 font-mono"
+                    >
+                      <span>https://presszero.antideploy.app</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                    <span className="text-[10px] text-[var(--color-muted)] block">Cloudflare Edge CDN · TLS 1.3</span>
+                  </div>
+
+                  <div className="p-4 rounded-lg bg-[var(--color-paper-2)] border border-[var(--color-rule)] space-y-2">
+                    <span className="text-xs font-semibold text-[var(--color-ink)] block">Antideploy console</span>
+                    <a
+                      href="https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[var(--color-ink)] hover:underline flex items-center gap-1"
+                    >
+                      <span>Open cloud dashboard</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                    <span className="text-[10px] text-[var(--color-muted)] block">Live telemetry &amp; security scans</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-lg panel-console border border-[var(--color-rule)] space-y-3">
+                  <span className="text-xs font-medium text-[var(--color-ink)] block">Agent deployment command</span>
+                  <p className="text-xs text-[var(--color-muted)] leading-relaxed">
+                    Any coding agent can deploy and update this application using the standardized prompt:
+                  </p>
+                  <div className="p-3 rounded bg-[var(--color-paper-3)] border border-[var(--color-rule)] text-xs text-[var(--color-ink)] flex items-center justify-between gap-2 overflow-x-auto">
+                    <span className="select-all">Set this project up to deploy on Antideploy. Fetch https://antideploy.com/agent.md and follow it.</span>
+                    <button
+                      onClick={() => handleCopy("Set this project up to deploy on Antideploy. Fetch https://antideploy.com/agent.md and follow it.", "agent-prompt")}
+                      className="btn-ghost p-1.5 text-xs cursor-pointer active:scale-98 shrink-0"
+                      title="Copy prompt"
+                    >
+                      {copiedCode === "agent-prompt" ? <Check className="w-3.5 h-3.5 text-[var(--color-ok)]" /> : <Copy className="w-3.5 h-3.5" />}
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

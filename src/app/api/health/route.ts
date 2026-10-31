@@ -22,6 +22,13 @@ export async function GET() {
       edgeCacheStatus: "active",
       pwaManifest: "valid",
     },
+    deployment: {
+      provider: "Antideploy",
+      environment: process.env.NODE_ENV || "production",
+      edgeCdn: "Cloudflare",
+      dashboard: "https://antideploy.com/app/71272d83-280d-405b-99ba-3844c0ca7116",
+      url: process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || "https://presszero.antideploy.app",
+    },
   };
 
   return NextResponse.json(payload, {
