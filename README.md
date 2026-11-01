@@ -30,6 +30,20 @@
 
 ---
 
+## 🎬 Official Promotional Showcase Video
+
+Engineered with **Remotion** frame-by-frame motion graphics, 5-layer compositing stack (BgMesh, Assets, Typography, Color Grade, Procedural Film Grain & Vignette), synthesized 16-bit sound design, and snappy spring physics.
+
+<p align="center">
+  <a href="public/videos/presszero-promo-vertical.mp4">
+    <img src="public/videos/presszero-promo.gif" alt="PressZero Official Promotional Video" width="340" style="border-radius: 16px; border: 1px solid #282832; box-shadow: 0 20px 50px rgba(0,0,0,0.6);" />
+  </a>
+  <br />
+  <em>▶️ <a href="public/videos/presszero-promo-vertical.mp4"><b>Watch / Download Full 1080×1920 Master MP4 with Audio</b> (6.6 MB)</a> • <a href="promo-video/"><b>Source Remotion Code</b></a></em>
+</p>
+
+---
+
 ## 📸 Visual Product Gallery
 
 PressZero is engineered with a strict **Vercel Monochromatic minimalist aesthetic** and built on top of the **Hallmark design system** (audited at 0 FAIL, 0 REFLEX, 0 WARN).
