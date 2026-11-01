@@ -1,10 +1,11 @@
 """
 PressZero Unified Social Automation Coordinator
-One-command orchestrator to publish across:
+One-command orchestrator to publish and manage community across:
 - Instagram Reels & Posts (Meta Graph API)
 - Facebook Videos & Posts (Graph API)
 - X / Twitter Viral Threads (X API v2)
 - YouTube Long-form & Shorts (YouTube Data API v3)
+- Multi-Platform Community & Comment Responder (Instagram, FB, X, YT, Reddit)
 """
 
 import os
@@ -26,17 +27,20 @@ def run_step(cmd_args, title):
     return res.returncode == 0
 
 def main():
-    parser = argparse.ArgumentParser(description="Unified multi-platform publisher for PressZero")
-    parser.add_argument("--live", action="store_true", default=False, help="Execute live publishing (default is dry-run)")
-    parser.add_argument("--platforms", default="all", choices=["all", "meta", "x", "youtube"])
+    parser = argparse.ArgumentParser(description="Unified multi-platform publisher & community automation for PressZero")
+    parser.add_argument("--live", action="store_true", default=False, help="Execute live operations (default is dry-run)")
+    parser.add_argument("--platforms", default="all", choices=["all", "meta", "x", "youtube", "comments"])
+    parser.add_argument("--comments", action="store_true", default=False, help="Run community comment automation responder")
+    parser.add_argument("--poll", type=int, nargs="?", const=60, default=None, help="Continuously poll comment threads every N seconds")
     args = parser.parse_args()
 
     print("=" * 65)
-    print(f" PRESSZERO UNIFIED SOCIAL PUBLISHER (MODE: {'LIVE' if args.live else 'DRY RUN'})")
+    print(f" PRESSZERO UNIFIED SOCIAL ORCHESTRATOR (MODE: {'LIVE' if args.live else 'DRY RUN'})")
     print("=" * 65)
 
     # 1. Verification of assets
-    run_step([sys.executable, os.path.join(SCRIPTS_DIR, "social_distributor.py"), "--check", "--export"], "Step 1: Assets & Payload Verification")
+    if args.platforms != "comments":
+        run_step([sys.executable, os.path.join(SCRIPTS_DIR, "social_distributor.py"), "--check", "--export"], "Step 1: Assets & Payload Verification")
 
     # 2. X (Twitter)
     if args.platforms in ("all", "x"):
@@ -64,6 +68,17 @@ def main():
             print("[DRY RUN] Thumbnail    : public/marketing/youtube-thumbnail-master.jpg (788 KB)")
             print("[DRY RUN] Title        : Never Get Rejected Again! Crush Images to Exact KB (0 Server Uploads)")
             print("[i] To execute live YouTube upload: python scripts/youtube_uploader.py")
+
+    # 5. Community & Comment Automation Responder
+    if args.platforms in ("all", "comments") or args.comments:
+        cmd = [sys.executable, os.path.join(SCRIPTS_DIR, "comment_responder.py")]
+        if args.live:
+            cmd.append("--live")
+        if args.poll:
+            cmd.extend(["--poll", str(args.poll)])
+        else:
+            cmd.append("--simulate-batch")
+        run_step(cmd, "Step 5: Multi-Platform Community & Comment Responder")
 
     print("\n" + "=" * 65)
     print(" [✓] UNIFIED ORCHESTRATION CYCLE COMPLETE")

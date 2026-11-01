@@ -328,6 +328,36 @@ Download: https://github.com/soumyadeepsarkar-2004/PressZero/releases/tag/v1.0.0
 
 ---
 
+## 🤖 Community & Comment Automation Suite
+
+PressZero includes an autonomous multi-platform community responder and webhook engine (`scripts/comment_responder.py`) that monitors social launch threads, classifies incoming comments, and delivers helpful, zero-AI-slop replies in real-time.
+
+```powershell
+# Run benchmark simulation across 10 real scenarios
+python scripts/comment_responder.py --simulate-batch
+
+# Interactive mode to test triage and intent classification
+python scripts/comment_responder.py --interactive
+
+# Continuous polling across active platforms (every 60s)
+python scripts/comment_responder.py --poll 60 --live
+
+# Unified publishing + community automation run
+python scripts/publish_all.py --comments
+```
+
+### Live Target Surfaces:
+- **Reddit**: [`r/SideProject` Discussion](https://www.reddit.com/r/SideProject/comments/1xl2d7c/presszero_i_built_an_opensource_100_inbrowser/) (Author: `u/babuji_cake`)
+- **Instagram**: [`_hmm.soumo_` Reel](https://www.instagram.com/_hmm.soumo_/reel/DfMxAKRKGtg/)
+- **YouTube**: [`TechX Shann` Explainer Video](https://www.youtube.com/watch?v=waQuuUmrwmg)
+- **X / Twitter**: [`@sarkar58153` Launch Thread](https://x.com/sarkar58153/status/2116815001730343100)
+- **Facebook**: [`Soumyadeep Sarkar` Video](https://www.facebook.com/shann.ishann.18)
+- **Next.js Webhook**: `POST /api/webhooks/comments` (for Meta Graph API & custom automation bots)
+
+See [`marketing/COMMENT_AUTOMATION_ENGINE.md`](marketing/COMMENT_AUTOMATION_ENGINE.md) for full taxonomy specifications, webhook verification steps, and response matrices.
+
+---
+
 ## ⚡ Cloud Deployment & Infrastructure (Antideploy)
 
 Special shoutout to **[Antideploy](https://antideploy.com)** for powering the production cloud hosting of PressZero!
