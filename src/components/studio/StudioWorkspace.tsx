@@ -28,6 +28,7 @@ import { sanitizeFilename, MAX_QUEUE_SIZE, validateFileInput } from "@/lib/secur
 import CropModal from "@/components/studio/CropModal";
 import PixelLoupeModal from "@/components/studio/PixelLoupeModal";
 import VideoDemoModal, { VideoTopic } from "@/components/common/VideoDemoModal";
+import { trackCompression, trackDownload } from "@/lib/telemetry";
 
 interface StudioWorkspaceProps {
   selectedPresetId?: string;
@@ -130,6 +131,8 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
         const resultUrl = URL.createObjectURL(res.blob);
         const ratio = Math.max(0, (1 - res.size / job.originalSize) * 100);
 
+        trackCompression(res.timeMs);
+
         setJobs((prev) =>
           prev.map((j) =>
             j.id === job.id
@@ -150,6 +153,7 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
         );
       } catch (err: unknown) {
         const message = err instanceof Error ? err.message : "Compression error";
+
         setJobs((prev) =>
           prev.map((j) =>
             j.id === job.id
@@ -326,6 +330,7 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
   // Download single image
   const handleDownloadSingle = (job: CompressionJob) => {
     if (!job.resultBlob) return;
+    trackDownload();
     const url = URL.createObjectURL(job.resultBlob);
     const a = document.createElement("a");
     a.href = url;
@@ -345,6 +350,7 @@ export default function StudioWorkspace({ selectedPresetId, selectedFeature }: S
   const handleDownloadZip = async () => {
     const completedJobs = jobs.filter((j) => j.status === "completed" && j.resultBlob);
     if (completedJobs.length === 0) return;
+    trackDownload();
 
     const zip = new JSZip();
     completedJobs.forEach((job) => {

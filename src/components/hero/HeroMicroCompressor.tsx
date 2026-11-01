@@ -24,6 +24,7 @@ import { sanitizeFilename, validateFileInput } from "@/lib/security/sanitizer";
 import CropModal from "@/components/studio/CropModal";
 import PixelLoupeModal from "@/components/studio/PixelLoupeModal";
 import ExifInspectorModal from "@/components/studio/ExifInspectorModal";
+import { trackCompression, trackDownload } from "@/lib/telemetry";
 
 export default function HeroMicroCompressor() {
   const [sourceImg, setSourceImg] = useState<HTMLImageElement | null>(null);
@@ -50,6 +51,7 @@ export default function HeroMicroCompressor() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const comparisonRef = useRef<HTMLDivElement>(null);
   const isDraggingSplit = useRef<boolean>(false);
+  const userInteracted = useRef<boolean>(false);
 
   // Helper to load realistic sample signature image
   const generateSampleSignature = useCallback(() => {
@@ -149,6 +151,10 @@ export default function HeroMicroCompressor() {
 
       const ratio = Math.max(0, (1 - res.size / originalSize) * 100);
       setCompressionRatio(Math.round(ratio * 10) / 10);
+
+      if (userInteracted.current) {
+        trackCompression(res.timeMs);
+      }
     } catch (err) {
       console.error("Micro compression failed:", err);
     } finally {
@@ -201,6 +207,7 @@ export default function HeroMicroCompressor() {
     }
 
     try {
+      userInteracted.current = true;
       const img = await loadImage(file);
       const cleanName = sanitizeFilename(file.name);
       setSourceImg(img);
@@ -223,6 +230,7 @@ export default function HeroMicroCompressor() {
     }
 
     try {
+      userInteracted.current = true;
       const img = await loadImage(file);
       const cleanName = sanitizeFilename(file.name);
       setSourceImg(img);
@@ -243,6 +251,7 @@ export default function HeroMicroCompressor() {
 
   const handleDownload = () => {
     if (!resultBlob) return;
+    trackDownload();
     const url = URL.createObjectURL(resultBlob);
     const a = document.createElement("a");
     a.href = url;

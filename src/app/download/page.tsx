@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import PressZeroLogo from "@/components/common/PressZeroLogo";
 import PwaInstallPrompt from "@/components/layout/PwaInstallPrompt";
+import { trackDownload } from "@/lib/telemetry";
 
 const WINDOWS_SETUP_HASH = "2182A5A55BB86E7879317563D59268D1F1556633A920A559EC378F170464084F";
 const MACOS_ZIP_HASH = "2D418F304E42D56A805F6B2710BE95FBDF4BBF1959AAFDB6E4718995194BEF7F";
@@ -134,6 +135,7 @@ export default function DownloadPage() {
                 <a
                   href="/downloads/PressZero-macOS-Universal.zip"
                   download="PressZero-macOS-Universal.zip"
+                  onClick={() => trackDownload()}
                   className="w-full btn-primary py-2.5 px-4 text-xs font-medium flex items-center justify-center gap-2 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] whitespace-nowrap"
                 >
                   <Download className="w-4 h-4" aria-hidden="true" />
@@ -219,6 +221,7 @@ export default function DownloadPage() {
                 <a
                   href="/downloads/PressZero-Setup.exe"
                   download="PressZero-Setup.exe"
+                  onClick={() => trackDownload()}
                   className="w-full btn-primary py-2.5 px-4 text-xs font-medium flex items-center justify-center gap-2 cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] whitespace-nowrap"
                 >
                   <Download className="w-4 h-4" aria-hidden="true" />
@@ -229,6 +232,7 @@ export default function DownloadPage() {
                   <a
                     href="/downloads/PressZero-Windows-x64.zip"
                     download="PressZero-Windows-x64.zip"
+                    onClick={() => trackDownload()}
                     className="btn-ghost py-2 px-3 text-xs font-medium flex items-center justify-center gap-1.5 border border-[var(--color-rule-2)] cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] whitespace-nowrap"
                   >
                     <FileArchive className="w-3.5 h-3.5" aria-hidden="true" />
@@ -238,6 +242,7 @@ export default function DownloadPage() {
                   <a
                     href="/downloads/PressZero.exe"
                     download="PressZero.exe"
+                    onClick={() => trackDownload()}
                     className="btn-ghost py-2 px-3 text-xs font-medium flex items-center justify-center gap-1.5 border border-[var(--color-rule-2)] cursor-pointer active:scale-98 focus-visible:outline-2 focus-visible:outline-[var(--color-ink)] whitespace-nowrap"
                   >
                     <Monitor className="w-3.5 h-3.5" aria-hidden="true" />

@@ -83,9 +83,15 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/api/health" target="_blank" className="hover:text-[var(--color-ink)] transition-colors flex items-center gap-1.5">
+                <Link href="/api/metrics" target="_blank" className="hover:text-[var(--color-ink)] transition-colors flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 text-[var(--color-ok)]" aria-hidden="true" />
-                  <span>Telemetry (/api/health)</span>
+                  <span>Metrics DB (/api/metrics)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/api/health" target="_blank" className="hover:text-[var(--color-ink)] transition-colors flex items-center gap-1.5">
+                  <Activity className="w-3.5 h-3.5 text-[var(--color-muted)]" aria-hidden="true" />
+                  <span>Health probe (/api/health)</span>
                 </Link>
               </li>
             </ul>
