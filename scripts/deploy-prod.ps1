@@ -4,8 +4,8 @@ Write-Host "Creating deployment archive..."
 $deployTar = "$env:TEMP\presszero-deploy.tar.gz"
 if (Test-Path $deployTar) { Remove-Item $deployTar -Force }
 
-# Package workspace excluding heavy dev / video binaries to keep well under 28MB limit
-tar -czf $deployTar --exclude=.git --exclude=node_modules --exclude=.next --exclude=dist --exclude=promo-video --exclude="*.mp4" --exclude="*.exe" --exclude="*.dmg" --exclude="*.zip" .
+# Package workspace excluding heavy dev / video binaries to keep archive ultra-lean (<2MB)
+tar -czf $deployTar --exclude=.git --exclude=node_modules --exclude=.next --exclude=dist --exclude=promo-video --exclude="marketing" --exclude="docs/screenshots" --exclude="public/videos" --exclude="public/marketing" --exclude="*.mp4" --exclude="*.exe" --exclude="*.dmg" --exclude="*.zip" --exclude="*.gif" .
 
 $size = (Get-Item $deployTar).Length / 1MB
 Write-Host ("Archive created: {0:N2} MB" -f $size)
