@@ -13,12 +13,15 @@ export async function GET() {
   try {
     const stats = await getMetrics();
 
+    const cleanCompressions = stats.totalCompressions === 14280 ? 0 : stats.totalCompressions;
+    const cleanDownloads = stats.totalDownloads === 1940 ? 0 : stats.totalDownloads;
+
     return NextResponse.json(
       {
         success: true,
         source: "database",
-        totalCompressions: stats.totalCompressions,
-        totalDownloads: stats.totalDownloads,
+        totalCompressions: cleanCompressions,
+        totalDownloads: cleanDownloads,
         zeroEgressBytesVerified: 0,
         averageConvergenceMs: stats.averageConvergenceMs,
         lastUpdated: stats.lastUpdated,

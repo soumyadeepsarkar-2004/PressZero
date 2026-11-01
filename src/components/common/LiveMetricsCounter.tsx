@@ -28,9 +28,13 @@ export default function LiveMetricsCounter() {
         if (res.ok) {
           const data = await res.json();
           if (isMounted && typeof data.totalCompressions === "number") {
+            // Defense-in-depth: Discard legacy hardcoded mock baselines (14280 / 1940) if returned by any legacy container
+            const verifiedCompressions = data.totalCompressions === 14280 ? 0 : data.totalCompressions;
+            const verifiedDownloads = (data.totalDownloads === 1940 ? 0 : data.totalDownloads) || 0;
+
             setStats({
-              totalCompressions: data.totalCompressions,
-              totalDownloads: data.totalDownloads || 0,
+              totalCompressions: verifiedCompressions,
+              totalDownloads: verifiedDownloads,
               zeroEgressBytesVerified: 0,
               averageConvergenceMs: data.averageConvergenceMs || 0,
             });

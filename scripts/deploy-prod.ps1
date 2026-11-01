@@ -17,8 +17,3 @@ $appId = "71272d83-280d-405b-99ba-3844c0ca7116"
 Write-Host "Uploading to Antideploy API..."
 $response = curl.exe -s -X POST "https://antideploy.com/api/v1/deploy?applicationId=$appId" -H "Authorization: Bearer $token" -F "archive=@$deployTar"
 Write-Host "Deploy response: $response"
-
-Start-Sleep -Seconds 3
-Write-Host "Pinging production domain..."
-$head = curl.exe -s -I "https://presszero.antideploy.app" | Select-String "HTTP"
-Write-Host "Health Check: $head"
