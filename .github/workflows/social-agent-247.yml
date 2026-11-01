@@ -12,6 +12,9 @@ on:
         required: false
         default: "false"
         type: boolean
+  repository_dispatch:
+    # Allows external free cron pingers (Cloudflare Worker, cron-job.org) to trigger 24/7 cloud execution
+    types: [trigger-agent, social-agent-sweep]
 
 concurrency:
   group: social-agent-singleton

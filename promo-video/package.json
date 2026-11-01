@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "render": "remotion render src/index.ts PressZeroPromo out/presszero-promo.mp4 --codec h264 --crf 16",
     "render:landscape": "remotion render src/index.ts PressZeroPromoLandscape out/presszero-landscape.mp4 --codec h264 --crf 16",
-    "render:reel2": "remotion render src/index.ts PressZeroReel2PrivacyTrap out/presszero-reel2-privacy.mp4 --codec h264 --crf 16",
-    "render:reel3": "remotion render src/index.ts PressZeroReel3SignatureBleach out/presszero-reel3-bleach.mp4 --codec h264 --crf 16"
+    "render:reel2": "remotion render src/index.ts PressZeroReel2PrivacyTrap out/presszero-reel2-privacy.mp4 --codec h264 --crf 16 --browser-executable=\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
+    "render:reel3": "remotion render src/index.ts PressZeroReel3SignatureBleach out/presszero-reel3-bleach.mp4 --codec h264 --crf 16 --browser-executable=\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\""
   },
   "keywords": [],
   "author": "",

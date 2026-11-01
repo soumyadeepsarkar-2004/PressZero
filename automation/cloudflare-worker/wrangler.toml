@@ -1,0 +1,12 @@
+name = "presszero-social-agent-cron"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[triggers]
+# Runs automatically every 5 minutes in Cloudflare's edge network for free
+crons = ["*/5 * * * *"]
+
+[vars]
+PRESSZERO_API_URL = "https://presszero.antideploy.app/api/agent/cron"
+CRON_SECRET = "presszero_cron_2026"
+GH_REPO = "soumyadeepsarkar-2004/PressZero"

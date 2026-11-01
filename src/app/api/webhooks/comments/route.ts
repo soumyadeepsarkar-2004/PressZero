@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { classifyComment } from "@/lib/comment-classifier";
+import { sendCommentAlert } from "@/lib/telegram";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -104,6 +105,20 @@ export async function POST(req: NextRequest) {
       } catch (e) {
         console.error("[Webhook] Live dispatch error:", e);
       }
+    }
+
+    // 4. Send instant push notification to creator's Telegram
+    try {
+      await sendCommentAlert({
+        platform,
+        user: senderUser,
+        comment: extractedComment,
+        intent: `${result.intent} (${Math.round(result.confidence * 100)}%)`,
+        reply: result.response,
+        postUrl: body.post_url || body.permalink || null,
+      });
+    } catch (telegramErr) {
+      console.warn("[Webhook] Telegram alert send failed:", telegramErr);
     }
 
     return NextResponse.json({
