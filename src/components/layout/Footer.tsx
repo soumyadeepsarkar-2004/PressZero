@@ -16,6 +16,7 @@ import {
   FileCode2
 } from "lucide-react";
 import PressZeroLogo from "@/components/common/PressZeroLogo";
+import LiveMetricsCounter from "@/components/common/LiveMetricsCounter";
 
 export default function Footer() {
   return (
@@ -182,6 +183,11 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Live Operational Metrics & Visitor Counter */}
+        <div className="py-8 border-b border-[var(--color-rule)]">
+          <LiveMetricsCounter />
         </div>
 
         {/* Bottom Utility Bar */}
