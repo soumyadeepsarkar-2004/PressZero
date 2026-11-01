@@ -1,0 +1,39 @@
+{
+  "youtube_long": {
+    "title": "Never Get Rejected Again! Crush Images to Exact KB (0 Server Uploads)",
+    "asset": "C:\\PROJECTS\\Image-Compressor\\public\\videos\\presszero-youtube-explainer.mp4",
+    "thumbnail": "C:\\PROJECTS\\Image-Compressor\\public\\marketing\\youtube-thumbnail-master.jpg",
+    "chapters": [
+      "0:00 The Portal Rejection Bottleneck",
+      "0:06 The Privacy Trap of Cloud Compressors",
+      "0:14 Exact Target-KB Bisection Engine",
+      "0:25 Instant AI Signature Bleach",
+      "0:34 Biometric Passport & Visa Cropper",
+      "0:43 Zero-Knowledge Architecture",
+      "0:51 Outro & How to Try Free"
+    ]
+  },
+  "youtube_shorts_and_reels": {
+    "hook": "Stop guessing image compression sliders for government portals.",
+    "asset": "C:\\PROJECTS\\Image-Compressor\\public\\videos\\presszero-promo-vertical.mp4",
+    "caption": "Stop guessing image compression sliders. 🙅‍♂️\n\nIf you've ever applied for UPSC, SSC, US Visa, Schengen, or Passport Seva, you know the pain:\n❌ \"File exceeds 50 KB\"\n❌ \"Background must be pure white\"\n❌ \"Aspect ratio rejected\"\n\nGeneric cloud compressors make you slide vague percentages and upload your private Aadhaar/PAN to remote servers.\n\nPressZero fixes this completely:\n⚡ Type 50 KB → hits 49.8 KB on the dot in 64ms\n📄 AI Signature Bleach → 100% pure 255-white background\n📐 Biometric Reticle → Built-in passport & visa aspect ratios\n🛡️ 0 Bytes Egress → 100% client-side WebAssembly (no servers, no data leaks)\n\nTry it 100% free right now:\n👉 https://presszero.antideploy.app\n⭐ Star on GitHub: github.com/soumyadeepsarkar-2004/PressZero\n\n#TechHacks #GovExams #UPSC #SSC #WebDev #OpenSource #ImageCompressor #Reels #Shorts #TechTips",
+    "tags": [
+      "#TechHacks",
+      "#GovExams",
+      "#UPSC",
+      "#SSC",
+      "#ImageCompressor",
+      "#Privacy",
+      "#OpenSource"
+    ]
+  },
+  "x_twitter_thread": [
+    "1/7 🚨 Every month, millions of job & visa applicants get rejected by government portals (UPSC, SSC, US Visa, Schengen) because their photo is 51 KB instead of 50 KB.\n\nWe built PressZero to solve this forever — with 0 server uploads.\n\nHere is how it works: 👇",
+    "2/7 The Problem with Online Compressors:\n\nWhen you use tools like TinyPNG or random resizing websites:\n1. Your sensitive Aadhaar, PAN, and passport are uploaded to remote cloud servers.\n2. You get vague 'quality' sliders. Guess 80%? 74 KB. Guess 60%? Blurry mess.",
+    "3/7 The PressZero Bisection Engine:\n\nInstead of guessing, PressZero runs a binary search on the image's quantization matrix right in your browser via Web Workers.\n\nYou set the target to 50 KB. The engine dynamically brackets the file and hits 49.8 KB in < 80ms.",
+    "4/7 AI Signature & Stamp Bleaching:\n\nTaking a phone photo of your signature always results in yellow paper and desk shadows. Portals reject this.\n\nOur adaptive Otsu thresholding bleaches the background to 100% pure RGB(255, 255, 255) without thinning ink strokes.",
+    "5/7 Biometric Smart Cropping:\n\nNo more manual pixel math. We built one-click presets for:\n- US Visa (2x2 in, 600x600)\n- Schengen Visa (35x45 mm)\n- UPSC / SSC Exam (3.5x4.5 cm)\n\nWith biometric eye and chin guidelines.",
+    "6/7 Zero-Knowledge Guarantee:\n\n🛡️ 0 Bytes Egress\n⚡ Works 100% Offline (PWA)\n🔓 MIT Licensed & Fully Open Source\n\nYour biometric data never touches any server.",
+    "7/7 Try PressZero right now (no signup, 100% free forever):\n\n🌐 Web App: https://presszero.antideploy.app\n⭐ GitHub: https://github.com/soumyadeepsarkar-2004/PressZero\n\nRT to save a job applicant from portal rejection hell! 🔁"
+  ]
+}
