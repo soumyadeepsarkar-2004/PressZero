@@ -1,4 +1,26 @@
 {
-  "replied_ids": [],
-  "history": []
+  "replied_ids": [
+    "ig_cmt_og_tirtho99_001",
+    "1593062792838067"
+  ],
+  "history": [
+    {
+      "id": "ig_cmt_og_tirtho99_001",
+      "platform": "instagram",
+      "user": "og_tirtho99",
+      "comment": "ZERO",
+      "intent": "LINK_REQUEST",
+      "reply": "@og_tirtho99 Here's the direct link: https://presszero.antideploy.app (100% free, runs client-side with 0 server uploads). Code is open source on GitHub: https://github.com/soumyadeepsarkar-2004/PressZero. Hit me up if you need any portal presets!",
+      "timestamp": "2026-11-01T16:30:00.000Z"
+    },
+    {
+      "id": "1593062792838067",
+      "platform": "facebook",
+      "user": "Anubhab Mondal",
+      "comment": "Helpful",
+      "intent": "GENERAL_APPRECIATION",
+      "reply": "Thanks Anubhab! Glad it's helpful. You can try it directly at https://presszero.antideploy.app (runs 100% locally in your browser with zero server uploads). Let me know if you need any specific portal presets!",
+      "timestamp": "2026-11-01T16:34:03.000Z"
+    }
+  ]
 }
