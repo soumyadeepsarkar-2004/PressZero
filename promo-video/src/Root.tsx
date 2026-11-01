@@ -15,6 +15,10 @@ import { YtBiometricCropScene } from "./scenes/youtube/YtBiometricCropScene";
 import { YtZeroKnowledgeArchitectureScene } from "./scenes/youtube/YtZeroKnowledgeArchitectureScene";
 import { YtOutroCtaScene } from "./scenes/youtube/YtOutroCtaScene";
 
+// Next-Gen Autonomous Growth Reels
+import { ReelPrivacyTrapSequence } from "./scenes/reels/ReelPrivacyTrapSequence";
+import { ReelSignatureBleachSequence } from "./scenes/reels/ReelSignatureBleachSequence";
+
 const MainPromoSequence: React.FC = () => {
   return (
     <>
@@ -128,6 +132,26 @@ export const Root: React.FC = () => {
         fps={30}
         width={1920}
         height={1080}
+      />
+
+      {/* Reel 2 (Scheduled +7 Days): Privacy Warning & 0-Egress WebAssembly (15s) */}
+      <Composition
+        id="PressZeroReel2PrivacyTrap"
+        component={ReelPrivacyTrapSequence}
+        durationInFrames={450}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* Reel 3 (Scheduled +14 Days): 3-Second Signature Bleach & Otsu Binarization (15s) */}
+      <Composition
+        id="PressZeroReel3SignatureBleach"
+        component={ReelSignatureBleachSequence}
+        durationInFrames={450}
+        fps={30}
+        width={1080}
+        height={1920}
       />
     </>
   );

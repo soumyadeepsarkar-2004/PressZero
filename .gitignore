@@ -45,3 +45,7 @@ ehthumbs.db
 .system_generated/
 scratch/
 tmp/
+
+# Python
+__pycache__/
+*.pyc

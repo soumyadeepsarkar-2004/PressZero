@@ -1,0 +1,69 @@
+name: PressZero 24/7 Autonomous Social Agent
+
+on:
+  schedule:
+    # Runs every 30 minutes, 24/7 in GitHub Cloud (100% Free for Public Repos)
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    # Allows instant manual trigger from GitHub UI / Mobile App
+    inputs:
+      dry_run:
+        description: "Dry Run mode (test without posting replies)"
+        required: false
+        default: "false"
+        type: boolean
+
+concurrency:
+  group: social-agent-singleton
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run-agent:
+    name: Autonomous Community Triage & Relay
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Agent Dependencies
+        run: |
+          pip install requests
+
+      - name: Execute Autonomous Social Agent Sweep
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          INSTAGRAM_MEDIA_ID: ${{ secrets.INSTAGRAM_MEDIA_ID }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python scripts/autonomous_social_agent.py --cron
+          else
+            python scripts/autonomous_social_agent.py --cron --live
+          fi
+
+      - name: Commit & Persist Updated State Cache
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "PressZero Autonomous Agent [Bot]"
+          git add data/replied_comments.json marketing/CONTENT_GROWTH_CALENDAR.json
+          git diff --staged --quiet || git commit -m "chore(agent): synchronize 24/7 interaction state [skip ci]"
+          git push origin main || echo "No changes to commit or push."

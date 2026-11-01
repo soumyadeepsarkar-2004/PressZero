@@ -328,6 +328,33 @@ Download: https://github.com/soumyadeepsarkar-2004/PressZero/releases/tag/v1.0.0
 
 ---
 
+## 🤖 24/7 Autonomous Cloud Social Agent & Telegram Relay
+
+PressZero features a zero-cost, 24/7 autonomous social agent that runs continuously in the cloud via GitHub Actions—monitoring community touchpoints, auto-replying with zero-slop context, relaying instant push alerts to your Telegram, and scheduling future growth reels.
+
+```powershell
+# Run single audit sweep (checks comments, growth schedule, alerts):
+python scripts/autonomous_social_agent.py --cron
+
+# Test instant Telegram alert dispatch:
+python scripts/autonomous_social_agent.py --test-alert
+
+# Continuous local polling loop (every 60s):
+python scripts/autonomous_social_agent.py --poll 60 --live
+
+# Inspect scheduled content growth pipeline (+7 and +14 day reels):
+python scripts/autonomous_social_agent.py --check-growth
+```
+
+### Key Capabilities:
+- **Cloud Cron (24/7 Offline Execution)**: Powered by [`.github/workflows/social-agent-247.yml`](.github/workflows/social-agent-247.yml), running automatically every 30 minutes with zero hosting fees.
+- **Instant Telegram Alerts**: Delivers rich push alerts to the creator's phone whenever comments or feedback occur.
+- **Autonomous Video Pipeline**: Remotion compositions for upcoming Reels (`PressZeroReel2PrivacyTrap` and `PressZeroReel3SignatureBleach`) scheduled for weekly algorithmic momentum.
+
+See [`marketing/247_AUTONOMOUS_AGENT_GUIDE.md`](marketing/247_AUTONOMOUS_AGENT_GUIDE.md) for full setup instructions and Telegram Bot token configuration.
+
+---
+
 ## 🤖 Community & Comment Automation Suite
 
 PressZero includes an autonomous multi-platform community responder and webhook engine (`scripts/comment_responder.py`) that monitors social launch threads, classifies incoming comments, and delivers helpful, zero-AI-slop replies in real-time.

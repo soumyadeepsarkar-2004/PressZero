@@ -1,7 +1,17 @@
 {
   "replied_ids": [
     "ig_cmt_og_tirtho99_001",
-    "1593062792838067"
+    "1593062792838067",
+    "sim_ig_001",
+    "sim_yt_002",
+    "sim_red_003",
+    "sim_x_004",
+    "sim_fb_005",
+    "sim_ig_006",
+    "sim_yt_007",
+    "sim_red_008",
+    "sim_x_009",
+    "sim_fb_010"
   ],
   "history": [
     {
@@ -21,6 +31,96 @@
       "intent": "GENERAL_APPRECIATION",
       "reply": "Thanks Anubhab! Glad it's helpful. You can try it directly at https://presszero.antideploy.app (runs 100% locally in your browser with zero server uploads). Let me know if you need any specific portal presets!",
       "timestamp": "2026-11-01T16:34:03.000Z"
+    },
+    {
+      "id": "sim_ig_001",
+      "platform": "instagram",
+      "user": "rohit_aspirant",
+      "comment": "bhai upsc ke liye signature kitne kb ka hona chahiye aur background kaise saaf kare?",
+      "intent": "EXAM_PRESET",
+      "reply": "@rohit_aspirant UPSC ke liye signature 10-20 KB aur photo 20-50 KB chahiye hoti hai. PressZero Studio me direct UPSC preset select karo ya target me '18 KB' likh do, exact lock kar dega!",
+      "timestamp": "2026-11-01T16:39:58.475465+00:00"
+    },
+    {
+      "id": "sim_yt_002",
+      "platform": "youtube",
+      "user": "Priya Sharma",
+      "comment": "Is this completely safe to upload my Aadhaar card and passport photo? Where is the data stored?",
+      "intent": "PRIVACY_SECURITY",
+      "reply": "Zero Bytes Egress is our core promise. Your files never touch a remote server; everything processes locally in your browser memory via WebAssembly. You can test it in airplane mode!",
+      "timestamp": "2026-11-01T16:39:58.528337+00:00"
+    },
+    {
+      "id": "sim_red_003",
+      "platform": "reddit",
+      "user": "dev_vikram",
+      "comment": "Link please! Where can I try this web app? Is the source code available on github?",
+      "intent": "LINK_REQUEST",
+      "reply": "Head over to https://presszero.antideploy.app - it runs entirely in your local browser with no quotas.",
+      "timestamp": "2026-11-01T16:39:58.583194+00:00"
+    },
+    {
+      "id": "sim_x_004",
+      "platform": "x",
+      "user": "ananya_prep",
+      "comment": "Does it have the exact 600x600 crop for US Visa DS-160? I need 240 KB target.",
+      "intent": "EXAM_PRESET",
+      "reply": "@ananya_prep For US Visa DS-160, photos require a 600x600 square ratio and maximum 240 KB. Our biometric cropper has a dedicated US Visa template ready to use.",
+      "timestamp": "2026-11-01T16:39:58.637641+00:00"
+    },
+    {
+      "id": "sim_fb_005",
+      "platform": "facebook",
+      "user": "Manoj Kumar",
+      "comment": "Bhai desktop me offline bina internet ke use kar sakte hain kya? Windows app kaha milegi?",
+      "intent": "TROUBLESHOOTING",
+      "reply": "Offline desktop app chahiye toh website ke top header me 'Download' par click karo, Windows (.EXE) aur Mac package mil jayega jo bina internet chalta hai.",
+      "timestamp": "2026-11-01T16:39:58.692114+00:00"
+    },
+    {
+      "id": "sim_ig_006",
+      "platform": "instagram",
+      "user": "designer_sam",
+      "comment": "Already market me tinypng aur iloveimg hai, why should anyone use this?",
+      "intent": "SKEPTIC_OBJECTION",
+      "reply": "Baki compressors me aapko slider 70%, 80% guess karna padta hai aur file 51 KB ho jaye toh portal reject kar deta hai. PressZero me aap exact '50 KB' likhte ho aur ye binary search se exact limit par lock karta hai, wo bhi 0 server upload ke sath.",
+      "timestamp": "2026-11-01T16:39:58.745704+00:00"
+    },
+    {
+      "id": "sim_yt_007",
+      "platform": "youtube",
+      "user": "Amit Verma",
+      "comment": "Bhai signature bohot faint aa raha hai mobile camera se khicha hua. Contrast theek hoga?",
+      "intent": "TROUBLESHOOTING",
+      "reply": "Studio me Signature Bleach ke sath 'Contrast' aur 'Paper Cutoff' slider diya hai. Cutoff ko thoda adjust karoge toh dark carbon black ink ban jayegi!",
+      "timestamp": "2026-11-01T16:39:58.798749+00:00"
+    },
+    {
+      "id": "sim_red_008",
+      "platform": "reddit",
+      "user": "civil_service_2026",
+      "comment": "Does it support NTA NEET photo specifications? 50 to 200 KB with white background?",
+      "intent": "EXAM_PRESET",
+      "reply": "For NTA (NEET/JEE), photos need 50-200 KB with 80% face coverage. The built-in NTA preset crops and compresses to specification in one second.",
+      "timestamp": "2026-11-01T16:39:58.851582+00:00"
+    },
+    {
+      "id": "sim_x_009",
+      "platform": "x",
+      "user": "tech_guy_99",
+      "comment": "This is awesome bro! Exactly what I needed for portal uploads. Kudos!",
+      "intent": "GENERAL_APPRECIATION",
+      "reply": "Thank you! Glad it helps save time and eliminate portal rejections.",
+      "timestamp": "2026-11-01T16:39:58.903364+00:00"
+    },
+    {
+      "id": "sim_fb_010",
+      "platform": "facebook",
+      "user": "Suresh Patel",
+      "comment": "Free hai ya aage chal ke subscription manga jayega?",
+      "intent": "LINK_REQUEST",
+      "reply": "Bhai presszero.antideploy.app par jao, ek second me khulega aur bilkul free aur open source hai.",
+      "timestamp": "2026-11-01T16:39:58.956013+00:00"
     }
   ]
 }
